@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="d-flex flex-row" id="platosContainer">
+    <h1>Plato</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ plato.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ plato.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ plato.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('platos_index') }}">Atrás</a>
+        </li>
+        <li>
+            <a href="{{ path('platos_edit', { 'id': plato.id }) }}">Editar</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <a href="{{ path('platos_index') }}">Eliminar</a>
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+{% endblock %}

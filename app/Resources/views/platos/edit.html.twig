@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="d-flex flex-row" id="platosContainer">
+    <h1>Editar Plato</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Editar" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('platos_index') }}">Atrás</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+              <a href="{{ path('platos_index') }}">Eliminar</a>
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+{% endblock %}

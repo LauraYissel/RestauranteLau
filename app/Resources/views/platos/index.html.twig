@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="d-flex flex-row" id="platosContainer">
+    
+
+    <table>
+        
+        <tbody>
+        {% for plato in platos %}
+            <tr>
+                
+                <td>{{ plato.nombre }}</td>
+                <td>{{ plato.descripcion }}</td>
+                
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('platos_show', { 'id': plato.id }) }}">Ver</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('platos_edit', { 'id': plato.id }) }}">editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('platos_new') }}">Crear un nuevo plato</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}
