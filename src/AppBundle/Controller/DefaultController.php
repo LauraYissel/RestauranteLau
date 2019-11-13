@@ -36,17 +36,29 @@ class DefaultController extends Controller
         dump($restaurantes);
          return $this->render('default/restaurante.html.twig',['restaurantes'=>$restaurantes]);
     }
+    // /** 
+    // * @Route("/restaurante/{$sede}", name="sedes");
+    // */
+     
+
+    // public function sedesAction(Request $request, $sede)
+    // {
+       
+    //     return $this->render('default/restaurante.html.twig',['sede'=>$sede]);
+    // }
     /** 
-    * @Route("/restaurante/{$sede}", name="sedes");
+    * @Route("/restaurante/madrid", name="madrid");
     */
      
 
-    public function sedesAction(Request $request, $sede)
+    public function madridAction(Request $request)
     {
        
-        return $this->render('default/restaurante.html.twig',['sede'=>$sede]);
+        return $this->render('default/restaurantemadrid.html.twig');
     }
-    
+
+
+
     /** 
     * @Route("restaurante/contacto", name="contacto");
     */

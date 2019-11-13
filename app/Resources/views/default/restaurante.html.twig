@@ -14,15 +14,16 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         {% for restaurante in restaurantes %}
         
-          <a class="dropdown-item" href="{{path('contacto',{'sede':'Madrid'})}}">{{ restaurante.nombre}}<br>Ciudad:{{restaurante.localidad}}</a>
-        
+          <a class="dropdown-item" href="{{path('contacto')}}">{{ restaurante.nombre}}<br>Ciudad:{{restaurante.localidad}}</a>
+        {# {% if restaurante.nombre == "Restaurante Madrid" %}
+   <a class="dropdown-item" href="{{path('madrid')}}">Madrid</a>
+   {% endif %} #}
+   
 
           {% endfor %}
           
         </div>
       </li>
       </div>
-
-   
-   
+ 
 {% endblock %}
